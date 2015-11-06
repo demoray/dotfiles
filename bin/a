@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+#
+# show the 'hex' of ASM.
+#
+# EXAMPLE USAGE:
+#
+# $ bin/a "nop" "nop" "pop edx" "pop ecx", "ret"
+# 0000000: 9090 5a59 c3                             ..ZY.
+# $
+
+open (F, ">/tmp/quick.nasm.$$");
+print F "BITS 32\n";
+for (@ARGV) {
+    print F "$_\n";
+}
+close F;
+print `nasm /tmp/quick.nasm.$$ -o /dev/stdout | xxd`;
+unlink("/tmp/quick.nasm.$$");

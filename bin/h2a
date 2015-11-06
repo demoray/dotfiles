@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+#
+# un-hex encode ARGV
+#
+# $ h2a 41410a
+# AA
+# $
+
+print pack('H*', join('',@ARGV));# . "\n";

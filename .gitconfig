@@ -1,0 +1,5 @@
+[push]
+	default = simple
+[user]
+	name = Brian
+	email = bmc@shmoo.com

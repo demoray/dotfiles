@@ -1,0 +1,6 @@
+#!/usr/bin/perl
+#
+# hex encode on the commandline
+#
+
+print join('', unpack('H*', join('', @ARGV))) . "\n";

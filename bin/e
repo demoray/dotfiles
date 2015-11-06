@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# disassemble hex bufs
+#
+# $ bin/e 414243444445
+# 00000000  41                inc ecx
+# 00000001  42                inc edx
+# 00000002  43                inc ebx
+# 00000003  44                inc esp
+# 00000004  44                inc esp
+# 00000005  45                inc ebp
+# $
+
+h2a $* | ndisasm -b32 /dev/stdin
